@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Calculator</string>
     <string name="button_JDI">JUST DO IT</string>
     <string name="editTxt">Enter message</string>
     <string name="button_0">0</string>
@@ -13,7 +13,7 @@
     <string name="button_8">8</string>
     <string name="button_9">9</string>
     <string name="button_mul">x</string>
-    <string name="button_div">/</string>
+    <string name="button_div">÷</string>
     <string name="button_add">+</string>
     <string name="button_sub">-</string>
     <string name="button_equals">=</string>
