@@ -7,136 +7,257 @@
         android:layout_height="match_parent"
         tools:context=".DisplayTextActivity" tools:layout_editor_absoluteY="81dp">
 
-    <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:textSize="18sp" android:onClick="prevActivity"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"/>
     <EditText
-            android:layout_width="217dp"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:ems="10"
-            android:id="@+id/resultView"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginTop="54dp" app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+        android:id="@+id/resultView_operand"
+        android:layout_width="217dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultView" />
+
+    <EditText
+        android:id="@+id/resultView_answer"
+        android:layout_width="217dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultView_operand" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="9dp"
+        android:onClick="prevActivity"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/resultView"
+        android:layout_width="217dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
     <android.support.v7.widget.GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/gridLayout"
-            app:rowOrderPreserved="false"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/resultView"
-            app:layout_constraintVertical_bias="0.271">
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rowOrderPreserved="false">
 
         <Button
-                android:text="@string/button_clear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/button2" app:layout_column="1"
-                app:layout_row="4" app:layout_columnSpan="2" app:layout_gravity="fill_horizontal"/>
+            android:id="@+id/button_ce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_clear"
+            android:onClick="onClick"
+            app:layout_column="1"
+            app:layout_columnSpan="2"
+            app:layout_gravity="fill_horizontal"
+            app:layout_row="4" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_mul"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/button_mul" app:layout_column="4"
-                app:layout_row="0"/>
+            android:id="@+id/button_mul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_mul"
+            app:layout_column="4"
+            app:layout_row="0" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" tools:layout_editor_absoluteY="259dp"
-                tools:layout_editor_absoluteX="16dp" android:id="@+id/button_3" app:layout_column="2"
-                app:layout_row="0"/>
+            android:id="@+id/button_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_3"
+            app:layout_column="2"
+            app:layout_row="0"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="259dp" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_2"
-                android:layout_height="wrap_content" tools:layout_editor_absoluteY="181dp"
-                tools:layout_editor_absoluteX="16dp" android:id="@+id/button_2" android:layout_width="wrap_content"
-                app:layout_column="1" app:layout_row="0"/>
+            android:id="@+id/button_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_2"
+            app:layout_column="1"
+            app:layout_row="0"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="181dp" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" tools:layout_editor_absoluteY="331dp"
-                tools:layout_editor_absoluteX="16dp" android:id="@+id/button_4" app:layout_column="0"
-                app:layout_row="1"/>
+            android:id="@+id/button_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_4"
+            app:layout_column="0"
+            app:layout_row="1"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="331dp" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" tools:layout_editor_absoluteY="181dp"
-                tools:layout_editor_absoluteX="136dp" android:id="@+id/button_5" app:layout_column="1"
-                app:layout_row="1"/>
+            android:id="@+id/button_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_5"
+            app:layout_column="1"
+            app:layout_row="1"
+            tools:layout_editor_absoluteX="136dp"
+            tools:layout_editor_absoluteY="181dp" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" tools:layout_editor_absoluteY="259dp"
-                tools:layout_editor_absoluteX="136dp" android:id="@+id/button_6" app:layout_column="2"
-                app:layout_row="1"/>
+            android:id="@+id/button_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_6"
+            app:layout_column="2"
+            app:layout_row="1"
+            tools:layout_editor_absoluteX="136dp"
+            tools:layout_editor_absoluteY="259dp" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" tools:layout_editor_absoluteY="181dp"
-                tools:layout_editor_absoluteX="255dp" android:id="@+id/button_7" app:layout_column="0"
-                app:layout_row="2"/>
+            android:id="@+id/button_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_7"
+            app:layout_column="0"
+            app:layout_row="2"
+            tools:layout_editor_absoluteX="255dp"
+            tools:layout_editor_absoluteY="181dp" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" tools:layout_editor_absoluteY="259dp"
-                tools:layout_editor_absoluteX="255dp" android:id="@+id/button_8"/>
+            android:id="@+id/button_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_8"
+            tools:layout_editor_absoluteX="255dp"
+            tools:layout_editor_absoluteY="259dp" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" tools:layout_editor_absoluteY="331dp"
-                tools:layout_editor_absoluteX="255dp" android:id="@+id/button_1" app:layout_column="0"
-                app:layout_row="0"/>
+            android:id="@+id/button_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_1"
+            app:layout_column="0"
+            app:layout_row="0"
+            tools:layout_editor_absoluteX="255dp"
+            tools:layout_editor_absoluteY="331dp" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" tools:layout_editor_absoluteY="331dp"
-                tools:layout_editor_absoluteX="136dp" android:id="@+id/button_9" app:layout_column="2"
-                app:layout_row="2"/>
+            android:id="@+id/button_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_9"
+            app:layout_column="2"
+            app:layout_row="2"
+            tools:layout_editor_absoluteX="136dp"
+            tools:layout_editor_absoluteY="331dp" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_div"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" app:layout_row="1" app:layout_column="4"
-                android:id="@+id/button_div"/>
+            android:id="@+id/button_div"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_div"
+            app:layout_column="4"
+            app:layout_row="1" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_sub"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" app:layout_row="3" app:layout_column="4"
-                android:id="@+id/button_sub"/>
+            android:id="@+id/button_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_sub"
+            app:layout_column="4"
+            app:layout_row="3" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_equals"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" app:layout_row="3" app:layout_column="2"
-                android:id="@+id/button_equals"/>
+            android:id="@+id/button_equals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_equals"
+            app:layout_column="2"
+            app:layout_row="3" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" app:layout_row="2" app:layout_column="4"
-                android:id="@+id/button_add"/>
+            android:id="@+id/button_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_add"
+            app:layout_column="4"
+            app:layout_row="2" />
+
         <Button
-                android:onClick="updateNumberView"
-                android:text="@string/button_0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" app:layout_row="3" app:layout_column="0"
-                android:id="@+id/button_0" app:layout_columnSpan="2" app:layout_gravity="fill_horizontal"/>
+            android:id="@+id/button_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/button_0"
+            app:layout_column="0"
+            app:layout_columnSpan="2"
+            app:layout_gravity="fill_horizontal"
+            app:layout_row="3" />
+
+        <Button
+            android:id="@+id/button_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/delete"
+            app:layout_column="4"
+            app:layout_row="4" />
     </android.support.v7.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/textView_operator"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/resultView_operand"
+        app:layout_constraintEnd_toStartOf="@+id/resultView_operand"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultView" />
+
 </android.support.constraint.ConstraintLayout>

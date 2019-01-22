@@ -17,6 +17,7 @@
     <string name="button_add">+</string>
     <string name="button_sub">-</string>
     <string name="button_equals">=</string>
-    <string name="button_clear">Clear</string>
+    <string name="button_clear">CE</string>
+    <string name="delete">C</string>
 
 </resources>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".tableLayout"
+		android:layout_margin="10dp">
+
+		<TableRow
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				>
+
+				<EditText
+						android:id="@+id/editText3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:inputType="textPersonName"
+						android:text=""
+						android:layout_weight="1"
+						android:gravity="right"
+						/>
+		</TableRow>
+
+		<TableRow
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+
+				<Button
+						android:id="@+id/button7"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_column="0"
+						android:layout_span="0"
+						android:layout_weight="1"
+						android:text="Button" />
+
+				<Button
+						android:id="@+id/button8"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_column="1"
+						android:layout_weight="1"
+						android:text="Button" />
+
+				<Button
+						android:id="@+id/button9"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="Button" />
+
+		</TableRow>
+
+		<TableRow>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="0"
+						android:text="1"
+						android:layout_weight="1"
+				/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="1"
+						android:layout_weight="1"
+						android:text="2"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="3"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="+"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="DIV"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="MC"
+						/>
+		</TableRow>
+
+
+		<TableRow>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="0"
+						android:text="4"
+						android:layout_weight="1"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="1"
+						android:layout_weight="1"
+						android:text="5"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="6"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="3"
+						android:layout_weight="1"
+						android:text="-"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="4"
+						android:layout_weight="1"
+						android:text="MOD"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="5"
+						android:layout_weight="1"
+						android:text="MR"
+						/>
+		</TableRow>
+
+
+		<TableRow>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="0"
+						android:text="7"
+						android:layout_weight="1"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="1"
+						android:layout_weight="1"
+						android:text="8"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="9"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="X"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="SQRT"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="MS"
+						/>
+		</TableRow>
+
+
+		<TableRow>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="0"
+						android:text="0"
+						android:layout_weight="1"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="1"
+						android:layout_weight="1"
+						android:text="."
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="="
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="/"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="1/x"
+						/>
+				<Button
+						android:layout_width="0dp"
+						android:layout_column="2"
+						android:layout_weight="1"
+						android:text="M+"
+						/>
+		</TableRow>
+
+</TableLayout>
