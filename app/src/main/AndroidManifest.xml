@@ -20,7 +20,6 @@
 						android:name=".DisplayTextActivity"
 						android:parentActivityName=".MainActivity"
 						/>
-				<activity android:name=".Ex1" />
 				<activity android:name=".tableLayout"></activity>
 		</application>
 

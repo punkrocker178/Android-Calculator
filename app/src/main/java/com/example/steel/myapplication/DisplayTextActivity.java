@@ -1,6 +1,5 @@
 package com.example.steel.myapplication;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -18,11 +17,11 @@ public class DisplayTextActivity extends AppCompatActivity implements View.OnCli
     TextView txtView_Operator ;
     EditText resultView_operand, resultView_operand2,resultView_Answer;
     String operator ="";
-    String op1 ="";
-    String op2 = "";
+    String result_op1 ="",op1="";
+    String result_op2 = "",op2="";
     String result ="";
-    NumberFormat formatter;
-    Double ans;
+    NumberFormat formatter_result,formatter_operand;
+    Double ans = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +29,9 @@ public class DisplayTextActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_display_text);
         addControl();
         addEvents();
+
+        formatter_operand = new DecimalFormat("#,###");
+        formatter_result = new DecimalFormat("#,###,##0.00");
 
     }
 
@@ -96,17 +98,20 @@ public class DisplayTextActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View view) {
+
         String textValue = ((Button)view).getText().toString();
 
         //Number button 1-9
         switch (view.getId()){
             default:
-                if(resultView_operand.isFocused()){
+                if(resultView_operand.isFocused() && op1.length()<13){
                     op1 += textValue;
-                    resultView_operand.setText(op1);
-                }else if(resultView_operand2.isFocused()){
+                    result_op1 = formatter_operand.format(Double.parseDouble(op1));
+                    resultView_operand.setText(result_op1);
+                }else if(resultView_operand2.isFocused() && op2.length()<13){
                     op2 += textValue;
-                    resultView_operand2.setText(op2);
+                    result_op2 = formatter_operand.format(Double.parseDouble(op2));
+                    resultView_operand2.setText(result_op2);
                 }
 
                 break;
@@ -120,16 +125,18 @@ public class DisplayTextActivity extends AppCompatActivity implements View.OnCli
 
                 //Delete all button
             case R.id.button_ce:
-                op1 = "";
-                op2 = "";
+                result_op1 = "";
+                result_op2 = "";
                 operator = "";
                 result = "";
+                op1="";
+                op2="";
 
-                Log.d("Number after clear all","Value: "+ op1+" "+op2+" "+operator+" "+result);
+                Log.d("Number after clear all","Value: "+ result_op1 +" "+ result_op2 +" "+operator+" "+result);
 
-                resultView_operand.setText(op1);
+                resultView_operand.setText(result_op1);
                 txtView_Operator.setText(operator);
-                resultView_operand2.setText(op2);
+                resultView_operand2.setText(result_op2);
                 resultView_Answer.setText(result);
                 resultView_operand.requestFocus();
                 break;
@@ -138,24 +145,38 @@ public class DisplayTextActivity extends AppCompatActivity implements View.OnCli
             case R.id.button_c:
 
                 if(resultView_operand.isFocused() && !isEmpty(resultView_operand)){
-                    op1 = op1.substring(0, op1.length()-1);
-                    resultView_operand.setText(op1);
+                    op1 = op1.substring(0, op1.length() - 1);
+
+                    if(op1.isEmpty()){
+                        resultView_operand.setText("");
+                    }else {
+                        Log.d("op1 before format", op1);
+                        result_op1 = formatter_operand.format(Double.parseDouble(op1));
+                        resultView_operand.setText(result_op1);
+                    }
                 }else if(resultView_operand2.isFocused() && !isEmpty(resultView_operand2)){
                     op2 = op2.substring(0, op2.length()-1);
-                    resultView_operand2.setText(op2);
+
+                    if(op2.isEmpty()){
+                        resultView_operand2.setText("");
+                    }else{
+                        Log.d("op2 before format",op2);
+                        result_op2 = formatter_operand.format(Double.parseDouble(op2));
+                        resultView_operand2.setText(result_op2);
+                    }
                 }
 
                 break;
 
             case R.id.button_equals:
+
                 if(!isEmpty(resultView_operand)&&!isEmpty(resultView_operand2)){
-                    ans = calculate(op1,op2,operator);
+                    ans = calculate(op1, op2,operator);
                 }
-                formatter = new DecimalFormat("#,###,##0.00");
-                result = formatter.format(ans);
+
+                result = formatter_result.format(ans);
                 Log.d("answer",Double.toString(ans));
                 Log.d("formattedAns",result);
-
                 resultView_Answer.setText(result);
                 break;
 
